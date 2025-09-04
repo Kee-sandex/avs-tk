@@ -23,6 +23,7 @@
 .home-title {
   font-size: 2.8rem;
   margin-bottom: 1rem;
+  margin-top: 2.5rem;
   color: var(--primary);
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;

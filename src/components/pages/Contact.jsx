@@ -5,7 +5,7 @@ const Contact = ({ translations }) => {
     <section id="contact" style={{ paddingTop: '100px', paddingBottom: '50px', minHeight: '100vh' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--primary)' }}>
+          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', marginTop:'2.5rem',color: 'var(--primary)' }}>
             {translations['contact-title'] || 'Contact Tika Thhapa'}
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'var(--gray)', maxWidth: '800px', margin: '0 auto' }}>
