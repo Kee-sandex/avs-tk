@@ -7,7 +7,7 @@ import ataImg from '../../assets/images/avs-food/aata.jpg';
 
 // Importing avs members images
 import dineshImg from '../../assets/images/avs-members/Dinesh-sir.jpg';
-import tikaImg from '../../assets/images/avs-members/tika_image.png';
+import tikaImg from '../../assets/images/avs-photos/avsPic1.jpg';
 import teamImg from '../../assets/images/avs-members/tika-leader.jpg';
 import youImg from '../../assets/images/avs-members/youth-img.jpg';
 import youImg2 from '../../assets/images/avs-members/youth-img2.jpg';
@@ -18,12 +18,34 @@ import img2 from '../../assets/images/avs-restaurant/img2.jpg'
 import img3 from '../../assets/images/avs-restaurant/img3.jpg'
 import img4 from '../../assets/images/avs-restaurant/img4.jpg'
 
+// Importing thumbnails
+import vidThum from '../../assets/images/avs-video-thumbnail.PNG'
+import pdf1Thum from '../../assets/images/avs-pdf1-thumbnail.PNG'
+import pdf2Thum from '../../assets/images/avs-pdf2-thumbnail.PNG'
+
+
+// Importig avs-photos
+
+import avsPic2 from '../../assets/images/avs-photos/avsPic2.jpg';
+import avsPic3 from '../../assets/images/avs-photos/avsPic3.jpg';
+import avsPic4 from '../../assets/images/avs-photos/avsPic4.jpg';
+import avsPic5 from '../../assets/images/avs-photos/avsPic5.jpg';
+import avsPic6 from '../../assets/images/avs-photos/avsPic6.jpg';
+import avsPic7 from '../../assets/images/avs-photos/avsPic7.jpg';
+import avsPic8 from '../../assets/images/avs-photos/avsPic8.jpg';
+import avsPic9 from '../../assets/images/avs-photos/avsPic9.jpg';
+import avsPic10 from '../../assets/images/avs-photos/avsPic10.jpg';
+import avsPic11 from '../../assets/images/avs-photos/avsPic11.jpg';
+
+
 const Portfolio = ({ translations }) => {
   const [activeModal, setActiveModal] = useState(null);
   const [modalContent, setModalContent] = useState(null);
   const [activeGallery, setActiveGallery] = useState(null);
   const [galleryImages, setGalleryImages] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+
 
   // Define image collections for each section
   const farmsImages = [
@@ -139,8 +161,46 @@ const Portfolio = ({ translations }) => {
       title: "Farm Estates",
       desc: "Country living"
     }
+
+
   ];
 
+  const avsAnnualImage = [
+  
+    {
+      src: avsPic2
+    },
+    {
+      src: avsPic3
+    },
+    {
+      src: avsPic4
+    },
+    {
+      src: avsPic5
+
+    },
+    {
+      src: avsPic6
+    },
+    {
+      src: avsPic7
+    },
+    {
+      src: avsPic8
+    },
+    {
+      src: avsPic9
+    },
+    {
+      src: avsPic10
+
+    },
+    {
+      src: avsPic11
+
+    }
+  ];
   // Open image modal
   const openImageModal = (src) => {
     setModalContent(<img src={src} alt="Enlarged view" />);
@@ -169,7 +229,7 @@ const Portfolio = ({ translations }) => {
   // Open gallery
   const openGallery = (section, index = 0) => {
     let images = [];
-    switch(section) {
+    switch (section) {
       case 'farms':
         images = farmsImages;
         break;
@@ -185,10 +245,13 @@ const Portfolio = ({ translations }) => {
       case 'properties':
         images = propertiesImages;
         break;
+      case 'avsannual':
+        images = avsAnnualImage;
+        break;
       default:
         return;
     }
-    
+
     setGalleryImages(images);
     setCurrentImageIndex(index);
     setActiveGallery(section);
@@ -203,14 +266,14 @@ const Portfolio = ({ translations }) => {
 
   // Navigate to next image in gallery
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   // Navigate to previous image in gallery
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => 
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? galleryImages.length - 1 : prevIndex - 1
     );
   };
@@ -343,6 +406,25 @@ const Portfolio = ({ translations }) => {
                 ))}
               </div>
             </section>
+           {/*Avs Annual Function Images*/}
+            <section className="portfolio-section">
+              <div className="section-header">
+                <h2>AVS Annual Function Images</h2>
+                <button className="view-more-btn" onClick={() => openGallery('avsannual')}>View</button>
+              </div>
+
+              <div className="portfolio-grid">
+                {avsAnnualImage.slice(0, 10).map((item, index) => (
+                  <div key={index} className="image-container" onClick={() => openImageModal(item.src)}>
+                    <img src={item.src} alt={item.title} />
+                    <div className="portfolio-overlay">
+                      <h3>{item.title}</h3>
+                      <p>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
             {/* Properties & Villas Section */}
             <section className="portfolio-section">
@@ -374,21 +456,21 @@ const Portfolio = ({ translations }) => {
                 {[
                   {
                     type: "video",
-                    thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                    thumbnail: vidThum,
                     title: "Company Video",
-                    src: "https://drive.google.com/file/d/1VPN8yj59bm3tQTzQD4mDgi_YKPjkqjvx/view?usp=drivesdk" 
+                    src: "https://drive.google.com/file/d/1lqo1bNY8R5bOPrS_Ey4DdK2_qu3KShsi/view?usp=drivesdk"
                   },
                   {
                     type: "pdf",
-                    thumbnail: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    thumbnail: pdf1Thum,
                     title: "Company Profile",
                     src: "https://drive.google.com/file/d/1VLy6qKEkzqp-GCID8vkEZy0iRM-rv7ck/view?usp=drivesdk"
                   },
                   {
                     type: "pdf",
-                    thumbnail: "https://images.unsplash.com/photo-1591696205602-2f950c417dad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    thumbnail: pdf2Thum,
                     title: "Investment Opportunities",
-                    src: "https://drive.google.com/file/d/1VN_nbPx-hbQhIK1oIytQsEQhug3SIlpl/view?usp=drivesdk"
+                    src: "https://drive.google.com/file/d/1l_uv0xxFZnNfgTuGTa6wvtJIm4fy2_tg/view?usp=drivesdk"
                   }
                 ].map((item, index) => (
                   <div key={index} className="video-card">
@@ -440,9 +522,10 @@ const Portfolio = ({ translations }) => {
 
             <div className="hero-btns">
               <a href="/contact" className="btn">Invest with Us</a>
-              <a href="/model" className="btn btn-outline">View Business Model</a>
+              <a href="/avs-model" className="btn btn-outline">View Business Model</a>
             </div>
           </section>
+
         </div>
       </section>
 
@@ -472,10 +555,10 @@ const Portfolio = ({ translations }) => {
               <button className="gallery-nav-btn prev" onClick={prevImage}>&#10094;</button>
               <div className="gallery-thumbnails">
                 {galleryImages.map((img, index) => (
-                  <img 
-                    key={index} 
-                    src={img.src} 
-                    alt={img.title} 
+                  <img
+                    key={index}
+                    src={img.src}
+                    alt={img.title}
                     className={index === currentImageIndex ? 'active' : ''}
                     onClick={() => setCurrentImageIndex(index)}
                   />
