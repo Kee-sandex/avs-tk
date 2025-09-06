@@ -33,7 +33,7 @@ import Pic5 from '../../assets/images/avs-members/avsPic5.jpg';
 import Pic6 from '../../assets/images/avs-members/avsPic6.jpg';
 import Pic7 from '../../assets/images/avs-members/avsPic7.jpg';
 import Pic8 from '../../assets/images/avs-members/avsPic8.jpg';
-import Pic9 from '../../assets/images/avs-members/avsPic9.jpg';
+import Pic9 from '../../assets/images/avs-members/avsPic91.jpg';
 import Pic10 from '../../assets/images/avs-members/avsPic10.jpg';
 import Pic11 from '../../assets/images/avs-members/avsPic11.jpg';
 
