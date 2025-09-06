@@ -26,16 +26,16 @@ import pdf2Thum from '../../assets/images/avs-pdf2-thumbnail.PNG'
 
 // Importig avs-photos
 
-import Pic2 from '../../assets/images/avs-photos/avsPic2.jpg';
-import Pic3 from '../../assets/images/avs-photos/avsPic3.jpg';
-import Pic4 from '../../assets/images/avs-photos/avsPic4.jpg';
-import Pic5 from '../../assets/images/avs-photos/avsPic5.jpg';
-import Pic6 from '../../assets/images/avs-photos/avsPic6.jpg';
-import Pic7 from '../../assets/images/avs-photos/avsPic7.jpg';
-import Pic8 from '../../assets/images/avs-photos/avsPic8.jpg';
-import Pic9 from '../../assets/images/avs-photos/avsPic9.jpg';
-import Pic10 from '../../assets/images/avs-photos/avsPic10.jpg';
-import Pic11 from '../../assets/images/avs-photos/avsPic11.jpg';
+import Pic2 from '../../assets/images/avs-members/avs-photos/avsPic2.jpg';
+import Pic3 from '../../assets/images/avs-members/avs-photos/avsPic3.jpg';
+import Pic4 from '../../assets/images/avs-members/avs-photos/avsPic4.jpg';
+import Pic5 from '../../assets/images/avs-members/avs-photos/avsPic5.jpg';
+import Pic6 from '../../assets/images/avs-members/avs-photos/avsPic6.jpg';
+import Pic7 from '../../assets/images/avs-members/avs-photos/avsPic7.jpg';
+import Pic8 from '../../assets/images/avs-members/avs-photos/avsPic8.jpg';
+import Pic9 from '../../assets/images/avs-members/avs-photos/avsPic9.jpg';
+import Pic10 from '../../assets/images/avs-members/avs-photos/avsPic10.jpg';
+import Pic11 from '../../assets/images/avs-members/avs-photos/avsPic11.jpg';
 
 
 const Portfolio = ({ translations }) => {
