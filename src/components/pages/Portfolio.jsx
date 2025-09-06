@@ -7,7 +7,7 @@ import ataImg from '../../assets/images/avs-food/aata.jpg';
 
 // Importing avs members images
 import dineshImg from '../../assets/images/avs-members/Dinesh-sir.jpg';
-import tikaImg from '../../assets/images/avs-photos/avsPic1.jpg';
+import tikaImg from '../../assets/images/avs-members/avsPic1.jpg';
 import teamImg from '../../assets/images/avs-members/tika-leader.jpg';
 import youImg from '../../assets/images/avs-members/youth-img.jpg';
 import youImg2 from '../../assets/images/avs-members/youth-img2.jpg';
@@ -26,16 +26,16 @@ import pdf2Thum from '../../assets/images/avs-pdf2-thumbnail.PNG'
 
 // Importig avs-photos
 
-import Pic2 from '../../assets/images/avs-members/avs-photos/avsPic2.jpg';
-import Pic3 from '../../assets/images/avs-members/avs-photos/avsPic3.jpg';
-import Pic4 from '../../assets/images/avs-members/avs-photos/avsPic4.jpg';
-import Pic5 from '../../assets/images/avs-members/avs-photos/avsPic5.jpg';
-import Pic6 from '../../assets/images/avs-members/avs-photos/avsPic6.jpg';
-import Pic7 from '../../assets/images/avs-members/avs-photos/avsPic7.jpg';
-import Pic8 from '../../assets/images/avs-members/avs-photos/avsPic8.jpg';
-import Pic9 from '../../assets/images/avs-members/avs-photos/avsPic9.jpg';
-import Pic10 from '../../assets/images/avs-members/avs-photos/avsPic10.jpg';
-import Pic11 from '../../assets/images/avs-members/avs-photos/avsPic11.jpg';
+import Pic2 from '../../assets/images/avs-members/avsPic2.jpg';
+import Pic3 from '../../assets/images/avs-members/avsPic3.jpg';
+import Pic4 from '../../assets/images/avs-members/avsPic4.jpg';
+import Pic5 from '../../assets/images/avs-members/avsPic5.jpg';
+import Pic6 from '../../assets/images/avs-members/avsPic6.jpg';
+import Pic7 from '../../assets/images/avs-members/avsPic7.jpg';
+import Pic8 from '../../assets/images/avs-members/avsPic8.jpg';
+import Pic9 from '../../assets/images/avs-members/avsPic9.jpg';
+import Pic10 from '../../assets/images/avs-members/avsPic10.jpg';
+import Pic11 from '../../assets/images/avs-members/avsPic11.jpg';
 
 
 const Portfolio = ({ translations }) => {
