@@ -26,16 +26,16 @@ import pdf2Thum from '../../assets/images/avs-pdf2-thumbnail.PNG'
 
 // Importig avs-photos
 
-import avsPic2 from '../../assets/images/avs-photos/avsPic2.jpg';
-import avsPic3 from '../../assets/images/avs-photos/avsPic3.jpg';
-import avsPic4 from '../../assets/images/avs-photos/avsPic4.jpg';
-import avsPic5 from '../../assets/images/avs-photos/avsPic5.jpg';
-import avsPic6 from '../../assets/images/avs-photos/avsPic6.jpg';
-import avsPic7 from '../../assets/images/avs-photos/avsPic7.jpg';
-import avsPic8 from '../../assets/images/avs-photos/avsPic8.jpg';
-import avsPic9 from '../../assets/images/avs-photos/avsPic9.jpg';
-import avsPic10 from '../../assets/images/avs-photos/avsPic10.jpg';
-import avsPic11 from '../../assets/images/avs-photos/avsPic11.jpg';
+import Pic2 from '../../assets/images/avs-photos/avsPic2.jpg';
+import Pic3 from '../../assets/images/avs-photos/avsPic3.jpg';
+import Pic4 from '../../assets/images/avs-photos/avsPic4.jpg';
+import Pic5 from '../../assets/images/avs-photos/avsPic5.jpg';
+import Pic6 from '../../assets/images/avs-photos/avsPic6.jpg';
+import Pic7 from '../../assets/images/avs-photos/avsPic7.jpg';
+import Pic8 from '../../assets/images/avs-photos/avsPic8.jpg';
+import Pic9 from '../../assets/images/avs-photos/avsPic9.jpg';
+import Pic10 from '../../assets/images/avs-photos/avsPic10.jpg';
+import Pic11 from '../../assets/images/avs-photos/avsPic11.jpg';
 
 
 const Portfolio = ({ translations }) => {
@@ -168,36 +168,36 @@ const Portfolio = ({ translations }) => {
   const avsAnnualImage = [
   
     {
-      src: avsPic2
+      src: Pic2
     },
     {
-      src: avsPic3
+      src: Pic3
     },
     {
-      src: avsPic4
+      src: Pic4
     },
     {
-      src: avsPic5
+      src: Pic5
 
     },
     {
-      src: avsPic6
+      src: Pic6
     },
     {
-      src: avsPic7
+      src: Pic7
     },
     {
-      src: avsPic8
+      src: Pic8
     },
     {
-      src: avsPic9
+      src: Pic9
     },
     {
-      src: avsPic10
+      src: Pic10
 
     },
     {
-      src: avsPic11
+      src: Pic11
 
     }
   ];
