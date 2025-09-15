@@ -1,5 +1,3 @@
-
-
 // Header.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -27,6 +25,10 @@ const Header = ({ setLang, lang, isDarkMode, setIsDarkMode, translations }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
@@ -48,7 +50,7 @@ const Header = ({ setLang, lang, isDarkMode, setIsDarkMode, translations }) => {
           <li>
             <Link
               to="/"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
               className={location.pathname === '/' ? 'active' : ''}
             >
               {translations['home'] || 'Home'}
@@ -57,7 +59,7 @@ const Header = ({ setLang, lang, isDarkMode, setIsDarkMode, translations }) => {
           <li>
             <Link
               to="/avs-model"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
               className={location.pathname === '/avs-model' ? 'active' : ''}
             >
               {translations['avs-model'] || 'Avs Model'}
@@ -66,7 +68,7 @@ const Header = ({ setLang, lang, isDarkMode, setIsDarkMode, translations }) => {
           <li>
             <Link
               to="/portfolio"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
               className={location.pathname === '/portfolio' ? 'active' : ''}
             >
               {translations['portfolio'] || 'Portfolio'}
@@ -75,7 +77,7 @@ const Header = ({ setLang, lang, isDarkMode, setIsDarkMode, translations }) => {
           <li>
             <Link
               to="/contact"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={closeMenu}
               className={location.pathname === '/contact' ? 'active' : ''}
             >
               {translations['contact'] || 'Contact'}
@@ -105,6 +107,12 @@ const Header = ({ setLang, lang, isDarkMode, setIsDarkMode, translations }) => {
           <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
         </button>
       </div>
+      
+      {/* Overlay element - Add this right here */}
+      <div 
+        className={`nav-overlay ${isMenuOpen ? 'active' : ''}`} 
+        onClick={closeMenu}
+      />
     </header>
   );
 };
