@@ -11,6 +11,7 @@ import tikaImg from '../../assets/images/avs-members/avsPic1.jpg';
 import teamImg from '../../assets/images/avs-members/tika-leader.jpg';
 import youImg from '../../assets/images/avs-members/youth-img.jpg';
 import youImg2 from '../../assets/images/avs-members/youth-img2.jpg';
+import youImg3 from '../../assets/images/avs-members/Komal-thapa.jpg';
 
 // Importing avs-restaurant images
 import img1 from '../../assets/images/avs-restaurant/img1.jpg'
@@ -126,10 +127,7 @@ const Portfolio = ({ translations }) => {
       title: "Team Meeting",
       desc: "With Tk Sir"
     },
-    {
-      src: dineshImg,
-      desc: "Supportive Person"
-    },
+   
     {
       src: youImg,
       desc: "Young innovators"
@@ -137,6 +135,11 @@ const Portfolio = ({ translations }) => {
     {
       src: youImg2,
       desc: "Young innovators"
+    },
+    {
+      src: youImg3,
+      title: 'Komal Thapa'
+      
     }
   ];
 
@@ -395,7 +398,7 @@ const Portfolio = ({ translations }) => {
               <p className="text-center">Meet the dedicated professionals driving innovation and excellence across the AVS Group.</p>
 
               <div className="portfolio-grid">
-                {teamImages.slice(0, 4).map((item, index) => (
+                {teamImages.slice(0, 5).map((item, index) => (
                   <div key={index} className="image-container" onClick={() => openImageModal(item.src)}>
                     <img src={item.src} alt={item.title} />
                     <div className="portfolio-overlay">
