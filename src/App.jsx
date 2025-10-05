@@ -1,61 +1,4 @@
-// // // App.jsx
-// // import React, { useState, useEffect } from 'react';
-// // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// // import Header from './components/Layout/Header';
-// // import Footer from './components/Layout/Footer';
 
-
-// // import './App.css';
-
-// // function App() {
-// //   const [lang, setLang] = useState(localStorage.getItem('preferred-language') || 'en');
-// //   const [isDarkMode, setIsDarkMode] = useState(false);
-
-// //   useEffect(() => {
-// //     const savedTheme = localStorage.getItem('theme');
-// //     if (savedTheme === 'dark') {
-// //       setIsDarkMode(true);
-// //       document.body.classList.add('dark-mode');
-// //     }
-// //   }, []);
-
-// //   const translations = {
-// //     // ... your full translations object
-// //     // (Ensure you have all the new keys for the pages added here)
-// //     // Example:
-// //     'en': {
-// //       // ... all previous translations
-// //       'avs-model-h2-1': 'The Tika Thhapa',
-// //       'avs-model-h2-2': 'AVS Model',
-// //       'avs-model-subtitle': 'Here is how you can invest in AVS Group of Companies with me',
-// //       // ... and so on for all new content
-// //     },
-// //     'hi': {
-// //       // ... all previous translations
-// //       'avs-model-h2-1': 'टीका थापा',
-// //       'avs-model-h2-2': 'AVS मॉडल',
-// //       'avs-model-subtitle': 'आप मेरे साथ AVS ग्रुप ऑफ कंपनीज में ऐसे निवेश कर सकते हैं',
-// //       // ... and so on for all new content
-// //     },
-// //   };
-
-// //   return (
-// //     <Router>
-// //       <Header setLang={setLang} lang={lang} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} translations={translations[lang]} />
-// //       <main>
-
-// //       </main>
-// //       <Footer lang={lang} translations={translations[lang]} />
-// //     </Router>
-// //   );
-// // };
-
-// // export default App;
-
-
-// // App.jsx
-// // App.jsx
-// // App.jsx
 // import React, { useState, useEffect } from 'react';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Header from './components/Layout/Header';
@@ -139,11 +82,10 @@ function App() {
       </main>
       <Footer lang={lang} translations={translations} />
 
-      {/* 2. ADD THE TAWK MESSENGER COMPONENT HERE */}
-      {/* ⚠️ REMEMBER TO REPLACE THE PLACEHOLDER IDS WITH YOUR ACTUAL TAWK.TO IDs */}
+      
       <TawkMessengerReact
         propertyId="68e2505dfbabf5195cf1cd12"
-        widgetId="1j6q0jrns
+        widgetId="
         "
       />
     </Router>
