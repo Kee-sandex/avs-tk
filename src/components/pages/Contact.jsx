@@ -65,23 +65,213 @@
 
 // export default Contact;   
 
+import React, { useState, useEffect } from 'react';
 
-import React from 'react';
+// Enhanced Card component
+const Card = ({ children }) => (
+  <div style={{
+    background: 'var(--card-bg)',
+    padding: '2.5rem',
+    borderRadius: '16px',
+    boxShadow: 'var(--shadow)',
+    border: '1px solid var(--light-gray)',
+    transition: 'var(--transition)',
+    position: 'relative',
+    overflow: 'hidden'
+  }}>
+    {/* Card accent */}
+    <div style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '4px',
+      height: '100%',
+      background: 'linear-gradient(to bottom, var(--primary), var(--accent))'
+    }}></div>
+
+    <div style={{ marginLeft: '1rem' }}>
+      {children}
+    </div>
+  </div>
+);
+
+// Enhanced ContactItem component
+const ContactItem = ({ icon, title, value, link }) => (
+  <div style={{
+    marginBottom: '1.8rem',
+    lineHeight: '1.5',
+    display: 'flex',
+    alignItems: 'flex-start',
+    padding: '1rem',
+    borderRadius: '8px',
+    transition: 'var(--transition)',
+    background: 'transparent'
+  }}>
+    <span style={{
+      fontSize: '1.3rem',
+      marginRight: '1rem',
+      minWidth: '30px'
+    }}>
+      {icon}
+    </span>
+    <div>
+      <strong style={{
+        display: 'block',
+        marginBottom: '0.4rem',
+        color: 'var(--text-color)',
+        fontSize: '1.15rem',
+        fontWeight: '600'
+      }}>
+        {title}:
+      </strong>
+      {link ? (
+        <a
+          href={link}
+          style={{
+            color: 'var(--primary)',
+            textDecoration: 'none',
+            transition: 'var(--transition)',
+            fontWeight: '500'
+          }}
+          onMouseOver={(e) => e.target.style.color = 'var(--secondary)'}
+          onMouseOut={(e) => e.target.style.color = 'var(--primary)'}
+        >
+          {value}
+        </a>
+      ) : (
+        <span style={{ color: 'var(--gray)', fontWeight: '500' }}>
+          {value}
+        </span>
+      )}
+    </div>
+  </div>
+);
 
 const Contact = ({ translations }) => {
+  // 1. State for managing screen size
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 2. Function to update the mobile state
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  // 3. Effect to set initial state and add/remove event listener
+  useEffect(() => {
+    // Set initial state
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup function to remove the listener on component unmount
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []); // Empty dependency array means this runs only on mount and unmount
+
+  // 4. Dynamic styles based on screen size
+
+  const sectionStyle = {
+    paddingTop: '120px',
+    paddingBottom: '80px',
+    minHeight: '100vh',
+    background: 'var(--body-bg)',
+    position: 'relative'
+  };
+
+  const containerStyle = {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: isMobile ? '0 15px' : '0 20px', // Smaller padding on mobile
+    position: 'relative',
+    zIndex: 1
+  };
+
+  const headerStyle = {
+    textAlign: 'center',
+    marginBottom: isMobile ? '3rem' : '5rem', // Reduced margin on mobile
+    position: 'relative'
+  };
+
+  const titleStyle = {
+    fontSize: isMobile ? '2.5rem' : '3.2rem', // Smaller title on mobile
+    fontWeight: '700',
+    marginBottom: '1rem',
+    background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text'
+  };
+
+  const subtitleStyle = {
+    fontSize: isMobile ? '1.1rem' : '1.3rem', // Smaller subtitle on mobile
+    color: 'var(--gray)',
+    maxWidth: '700px',
+    margin: '0 auto',
+    lineHeight: '1.7',
+    fontWeight: '400'
+  };
+  
+  const infoGridStyle = {
+    display: 'grid',
+    // Change to single column layout on mobile
+    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(420px, 1fr))',
+    gap: isMobile ? '2rem' : '2.5rem', // Smaller gap on mobile
+    marginBottom: '5rem'
+  };
+  
+  const applyNowStyle = {
+    textAlign: 'center',
+    padding: isMobile ? '3rem 1.5rem' : '4rem 3rem', // Smaller padding on mobile
+    background: 'var(--card-bg)',
+    borderRadius: '20px',
+    boxShadow: 'var(--shadow)',
+    border: '1px solid var(--light-gray)',
+    position: 'relative',
+    overflow: 'hidden'
+  };
+
+  const applyNowTitleStyle = {
+    marginBottom: '1rem',
+    fontSize: isMobile ? '1.8rem' : '2.3rem', // Smaller title on mobile
+    color: 'var(--text-color)',
+    fontWeight: '600'
+  };
+
+  const applyNowSubtitleStyle = {
+    marginBottom: '2rem',
+    maxWidth: '650px',
+    margin: '0 auto 2rem auto',
+    fontSize: isMobile ? '1rem' : '1.15rem', // Smaller text on mobile
+    color: 'var(--gray)',
+    lineHeight: '1.7'
+  };
+
+  const iframeContainerStyle = {
+    overflow: 'hidden',
+    // Reduce iframe height for a better mobile experience
+    height: isMobile ? '800px' : '1000px',
+    width: '100%',
+    borderRadius: '12px',
+    boxShadow: '0 5px 25px rgba(0, 0, 0, 0.1)',
+    border: '1px solid var(--light-gray)'
+  };
+  
+  const additionalCtaStyle = {
+    marginTop: '2rem',
+    padding: isMobile ? '1.5rem' : '2rem',
+    background: 'var(--light-gray)',
+    borderRadius: '12px',
+    borderLeft: '4px solid var(--primary)'
+  };
+
+
   return (
     <section 
       id="contact" 
       className="contact-section"
-      style={{ 
-        paddingTop: '120px', 
-        paddingBottom: '80px', 
-        minHeight: '100vh', 
-        background: 'var(--body-bg)',
-        position: 'relative'
-      }}
+      style={sectionStyle}
     >
-      {/* Background decorative elements */}
+      {/* Background decorative elements (Keep as-is or optimize/remove if they cause mobile performance issues) */}
       <div style={{
         position: 'absolute',
         top: '10%',
@@ -108,20 +298,10 @@ const Contact = ({ translations }) => {
         zIndex: 0
       }}></div>
 
-      <div className="container" style={{ 
-        maxWidth: '1200px', 
-        margin: '0 auto', 
-        padding: '0 20px',
-        position: 'relative',
-        zIndex: 1 
-      }}>
+      <div className="container" style={containerStyle}>
         
         {/* === ENHANCED HEADER SECTION === */}
-        <div style={{ 
-          textAlign: 'center', 
-          marginBottom: '5rem',
-          position: 'relative'
-        }}>
+        <div style={headerStyle}>
           <div style={{
             width: '80px',
             height: '4px',
@@ -132,28 +312,13 @@ const Contact = ({ translations }) => {
           
           <h1 
             className="title" 
-            style={{ 
-              fontSize: '3.2rem', 
-              fontWeight: '700',
-              marginBottom: '1.5rem', 
-              background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}
+            style={titleStyle}
           >
             {translations['contact-title'] || 'Contact Tika Thhapa'}
           </h1>
           <p 
             className="subtitle" 
-            style={{ 
-              fontSize: '1.3rem', 
-              color: 'var(--gray)', 
-              maxWidth: '700px', 
-              margin: '0 auto',
-              lineHeight: '1.7',
-              fontWeight: '400'
-            }}
+            style={subtitleStyle}
           >
             {translations['contact-subtitle'] || 'Get in touch to learn more about investment opportunities with AVS Group'}
           </p>
@@ -162,14 +327,9 @@ const Contact = ({ translations }) => {
         {/* === ENHANCED FEATURE CARDS GRID === */}
         <div 
           className="info-grid" 
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))', 
-            gap: '2.5rem', 
-            marginBottom: '5rem' 
-          }}
+          style={infoGridStyle}
         >
-          {/* Why Join AVS Card */}
+          {/* Why Invest with AVS Card */}
           <Card>
             <div style={{
               display: 'flex',
@@ -192,7 +352,7 @@ const Contact = ({ translations }) => {
               <h3 style={{ 
                 margin: 0,
                 color: 'var(--text-color)', 
-                fontSize: '1.6rem',
+                fontSize: isMobile ? '1.4rem' : '1.6rem', // Smaller heading on mobile
                 fontWeight: '600'
               }}>
                 Why Invest with AVS?
@@ -216,7 +376,7 @@ const Contact = ({ translations }) => {
                   display: 'flex', 
                   alignItems: 'flex-start', 
                   marginBottom: '1rem',
-                  fontSize: '1.1rem',
+                  fontSize: isMobile ? '1rem' : '1.1rem', // Smaller text on mobile
                   color: 'var(--text-color)',
                   padding: '0.5rem 0',
                   borderBottom: '1px solid var(--light-gray)'
@@ -257,7 +417,7 @@ const Contact = ({ translations }) => {
               <h3 style={{ 
                 margin: 0,
                 color: 'var(--text-color)', 
-                fontSize: '1.6rem',
+                fontSize: isMobile ? '1.4rem' : '1.6rem', // Smaller heading on mobile
                 fontWeight: '600'
               }}>
                 Contact Information
@@ -276,6 +436,7 @@ const Contact = ({ translations }) => {
               value="tikathhapa3333@gmail.com" 
               link="mailto:tikathhapa3333@gmail.com"
             />
+            {/* The address item will now have its text wrap better on mobile due to the fixed width being removed, but we'll keep the ContactItem structure */}
             <ContactItem 
               icon="📍" 
               title="Address" 
@@ -287,16 +448,7 @@ const Contact = ({ translations }) => {
         {/* === ENHANCED APPLY NOW SECTION === */}
         <div 
           className="apply-now-section" 
-          style={{ 
-            textAlign: 'center', 
-            padding: '4rem 3rem', 
-            background: 'var(--card-bg)',
-            borderRadius: '20px',
-            boxShadow: 'var(--shadow)',
-            border: '1px solid var(--light-gray)',
-            position: 'relative',
-            overflow: 'hidden'
-          }}
+          style={applyNowStyle}
         >
           {/* Section background accent */}
           <div style={{
@@ -308,34 +460,16 @@ const Contact = ({ translations }) => {
             background: 'linear-gradient(90deg, var(--primary), var(--accent))'
           }}></div>
           
-          <h2 style={{ 
-            marginBottom: '1.2rem', 
-            fontSize: '2.3rem', 
-            color: 'var(--text-color)',
-            fontWeight: '600'
-          }}>
+          <h2 style={applyNowTitleStyle}>
             Start Your Investment Journey
           </h2>
-          <p style={{ 
-            marginBottom: '3rem', 
-            maxWidth: '650px', 
-            margin: '0 auto 3rem auto', 
-            fontSize: '1.15rem',
-            color: 'var(--gray)',
-            lineHeight: '1.7'
-          }}>
+          <p style={applyNowSubtitleStyle}>
             Fill out the form below. I'll contact you personally to guide you through the process and answer any questions you may have.
           </p>
           
-          <div style={{ 
-            overflow: 'hidden', 
-            height: '1000px', 
-            width: '100%',
-            borderRadius: '12px',
-            boxShadow: '0 5px 25px rgba(0, 0, 0, 0.1)',
-            border: '1px solid var(--light-gray)'
-          }}>
+          <div style={iframeContainerStyle}>
             <iframe 
+              // Consider using a simpler, embedding-friendly URL if available, but using the provided one for now.
               src="https://docs.google.com/forms/d/1HntCgR64NQf97ybBroTMuBnIL6WeiqqfNlbf9Cf28Q0/edit?pli=1" 
               width="100%" 
               height="1000" 
@@ -351,108 +485,12 @@ const Contact = ({ translations }) => {
             </iframe>
           </div>
           
-          {/* Additional CTA */}
-          <div style={{
-            marginTop: '3rem',
-            padding: '2rem',
-            background: 'var(--light-gray)',
-            borderRadius: '12px',
-            borderLeft: '4px solid var(--primary)'
-          }}>
-            <p style={{
-              margin: 0,
-              fontSize: '1.1rem',
-              color: 'var(--text-color)',
-              fontWeight: '500'
-            }}>
-              <span style={{ color: 'var(--primary)', fontWeight: '600' }}>Limited spots available!</span> Contact directly for priority consideration.
-            </p>
-          </div>
+          
         </div>
         
       </div>
     </section>
   );
 };
-
-// Enhanced Card component with hover effects
-const Card = ({ children }) => (
-  <div style={{ 
-    background: 'var(--card-bg)', 
-    padding: '2.5rem', 
-    borderRadius: '16px', 
-    boxShadow: 'var(--shadow)',
-    border: '1px solid var(--light-gray)',
-    transition: 'var(--transition)',
-    position: 'relative',
-    overflow: 'hidden'
-  }}>
-    {/* Card accent */}
-    <div style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '4px',
-      height: '100%',
-      background: 'linear-gradient(to bottom, var(--primary), var(--accent))'
-    }}></div>
-    
-    <div style={{ marginLeft: '1rem' }}>
-      {children}
-    </div>
-  </div>
-);
-
-// Enhanced ContactItem component with icons and links
-const ContactItem = ({ icon, title, value, link }) => (
-  <div style={{ 
-    marginBottom: '1.8rem', 
-    lineHeight: '1.5',
-    display: 'flex',
-    alignItems: 'flex-start',
-    padding: '1rem',
-    borderRadius: '8px',
-    transition: 'var(--transition)',
-    background: 'transparent'
-  }}>
-    <span style={{ 
-      fontSize: '1.3rem', 
-      marginRight: '1rem',
-      minWidth: '30px'
-    }}>
-      {icon}
-    </span>
-    <div>
-      <strong style={{ 
-        display: 'block', 
-        marginBottom: '0.4rem', 
-        color: 'var(--text-color)', 
-        fontSize: '1.15rem',
-        fontWeight: '600'
-      }}>
-        {title}:
-      </strong>
-      {link ? (
-        <a 
-          href={link} 
-          style={{ 
-            color: 'var(--primary)', 
-            textDecoration: 'none',
-            transition: 'var(--transition)',
-            fontWeight: '500'
-          }}
-          onMouseOver={(e) => e.target.style.color = 'var(--secondary)'}
-          onMouseOut={(e) => e.target.style.color = 'var(--primary)'}
-        >
-          {value}
-        </a>
-      ) : (
-        <span style={{ color: 'var(--gray)', fontWeight: '500' }}>
-          {value}
-        </span>
-      )}
-    </div>
-  </div>
-);
 
 export default Contact;
