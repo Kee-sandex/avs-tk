@@ -75,8 +75,7 @@ export const translations = {
     'withdrawalPolicyTitle': 'Withdrawal Policy',
     'withdrawalSubtitle': 'Understand the terms for withdrawing your investment',
     'earlyWithdrawal': 'Early Withdrawal',
-    'earlyWithdrawalDesc': '20% deduction if withdrawn before 6 months',
-    'earlyWithdrawalDescBtw624': '10% deuction between 6 months to 24 months',
+    'earlyWithdrawalDesc': '10% deduction if withdrawn before 24 months',
 
     'fullWithdrawal': 'Full Withdrawal',
     'fullWithdrawalDesc': 'No deductions after completing 24 months',
@@ -171,7 +170,7 @@ export const translations = {
     'withdrawalPolicyTitle': 'निकासी नीति',
     'withdrawalSubtitle': 'अपने निवेश को वापस निकालने की शर्तों को समझें',
     'earlyWithdrawal': 'जल्दी निकासी',
-    'earlyWithdrawalDesc': '6 महीने से पहले निकालने पर 20% कटौती',
+    'earlyWithdrawalDesc': '24 महीने से पहले निकालने पर 10% कटौती',
     'earlyWithdrawalDescBtw624': '6 महीने से लेकर 24 महीने के बीच  निकलने पर 10% कटौती ',
 
     'fullWithdrawal': 'पूर्ण निकासी',

@@ -257,9 +257,7 @@ const AvsModel = ({ translations }) => {
                 <h4 className="withdrawal-title">{translations['earlyWithdrawal'] || 'Early Withdrawal'}</h4>
               </div>
                <p className="withdrawal-description">
-                {translations['earlyWithdrawalDesc'] || '20% deduction if withdrawn before 6 months'}
-                <br />
-                {translations['earlyWithdrawalDescBtw624'] || '10% deuction between 6 months to 24 months'}
+                {translations['earlyWithdrawalDesc'] || '10% deduction if withdrawn before 6 months'}
               </p>
             </div>
             <div className="feature-box withdrawal-box success-box">
