@@ -28,4 +28,4 @@ export const sendFormViaWhatsApp = (formData, title = 'New Inquiry', number = WH
 
   const message = `*${title}*\n\n${lines.join('\n')}`;
   openWhatsApp(message, number);
-};
+};  
