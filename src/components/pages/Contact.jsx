@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { sendFormViaWhatsApp } from '../../utils/whatsapp';
+import { sendFormViaWhatsApp } from '../../utils/Whatsapp';
 import '../../styles/pages/Contact.css';
 const ContactItem = ({ icon, title, value, link }) => (
   <div className="contact-item">
