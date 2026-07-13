@@ -1,0 +1,107 @@
+.contact-section {
+  padding: 80px 20px;
+}
+
+.contact-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-section .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-section .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.contact-section .card {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.contact-section .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
+}
+
+.contact-section .card-header h3 {
+  margin: 0;
+}
+
+.contact-section .card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.contact-section .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid;
+}
+
+.contact-section .contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-section .contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.contact-section .contact-item-title {
+  margin-right: 0.4rem;
+}
+
+.contact-section .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact-section .contact-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contact-section .contact-form input,
+.contact-section .contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.contact-section .contact-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.contact-section .btn {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  border: 1px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+}

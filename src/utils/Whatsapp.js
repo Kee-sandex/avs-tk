@@ -1,6 +1,6 @@
 // src/utils/whatsapp.js
 
-const WHATSAPP_NUMBER = '91XXXXXXXXXX'; // country code + number, no + or spaces
+const WHATSAPP_NUMBER = '919517173555'; // country code + number, no + or spaces
 
 /**
  * Opens WhatsApp (app on mobile, web on desktop) with a prefilled message.

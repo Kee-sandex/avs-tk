@@ -18,7 +18,7 @@ const Home = ({ translations }) => {
             {translations['home-title'] || 'Tika Thhapa - AVS Group Investor'}
           </h1>
           <p className="home-subtitle">
-            {translations['home-subtitle'] || 'Achieving Financial Freedom Through Strategic Investments'}
+
           </p>
         </div>
 
@@ -35,7 +35,7 @@ const Home = ({ translations }) => {
           <div className="home-about-section">
             <h2 className="home-about-title">{translations['home-about-title'] || 'About Me'}</h2>
             <p className="home-about-text">
-              {translations['home-about-text'] || "I'm Tika Thhapa, an investor at AVS Group of Companies. Through strategic investments, I've achieved financial freedom and now I'm helping others do the same. I'm financially independent and can do everything I want in life."}
+              {translations['home-about-text'] || "I'm Tika Thhapa, an investor at AVS Group of Companies."}
             </p>
             <p className="home-about-text">
               {translations['home-about-text2'] || "AVS Group is one of the best investment companies where you can invest and earn good profits. If you want to invest your money and learn how to earn from AVS Group, you can contact me directly or explore this portfolio website to find all the details."}

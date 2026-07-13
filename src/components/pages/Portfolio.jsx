@@ -6,7 +6,7 @@ import oilImg from '../../assets/images/avs-food/oil.jpg';
 import ataImg from '../../assets/images/avs-food/aata.jpg';
 
 // Importing avs members images
-import dineshImg from '../../assets/images/avs-members/Dinesh-sir.jpg';
+
 import tikaImg from '../../assets/images/avs-members/avsPic1.jpg';
 import teamImg from '../../assets/images/avs-members/tika-leader.jpg';
 import youImg from '../../assets/images/avs-members/youth-img.jpg';
@@ -20,9 +20,9 @@ import img3 from '../../assets/images/avs-restaurant/img3.jpg'
 import img4 from '../../assets/images/avs-restaurant/img4.jpg'
 
 // Importing thumbnails
-import vidThum from '../../assets/images/avs-video-thumbnail.PNG'
+
 import pdf1Thum from '../../assets/images/avs-pdf1-thumbnail.PNG'
-import pdf2Thum from '../../assets/images/avs-pdf2-thumbnail.PNG'
+
 
 
 // Importig avs-photos
@@ -127,7 +127,7 @@ const Portfolio = ({ translations }) => {
       title: "Team Meeting",
       desc: "With Tk Sir"
     },
-   
+
     {
       src: youImg,
       desc: "Young innovators"
@@ -139,7 +139,7 @@ const Portfolio = ({ translations }) => {
     {
       src: youImg3,
       title: 'Komal Thapa'
-      
+
     }
   ];
 
@@ -169,7 +169,7 @@ const Portfolio = ({ translations }) => {
   ];
 
   const avsAnnualImage = [
-  
+
     {
       src: Pic2
     },
@@ -409,7 +409,7 @@ const Portfolio = ({ translations }) => {
                 ))}
               </div>
             </section>
-           {/*Avs Annual Function Images*/}
+            {/*Avs Annual Function Images*/}
             <section className="portfolio-section">
               <div className="section-header">
                 <h2>AVS Annual Function Images</h2>
@@ -457,24 +457,14 @@ const Portfolio = ({ translations }) => {
 
               <div className="portfolio-grid">
                 {[
-                  {
-                    type: "video",
-                    thumbnail: vidThum,
-                    title: "Company Video",
-                    src: "https://drive.google.com/file/d/1lqo1bNY8R5bOPrS_Ey4DdK2_qu3KShsi/view?usp=drivesdk"
-                  },
+
                   {
                     type: "pdf",
                     thumbnail: pdf1Thum,
                     title: "Company Profile",
                     src: "https://drive.google.com/file/d/1VLy6qKEkzqp-GCID8vkEZy0iRM-rv7ck/view?usp=drivesdk"
                   },
-                  {
-                    type: "pdf",
-                    thumbnail: pdf2Thum,
-                    title: "Investment Opportunities",
-                    src: "https://drive.google.com/file/d/1l_uv0xxFZnNfgTuGTa6wvtJIm4fy2_tg/view?usp=drivesdk"
-                  }
+
                 ].map((item, index) => (
                   <div key={index} className="video-card">
                     <div className="video-thumbnail" onClick={() => openVideoModal(item.src)}>
@@ -491,32 +481,7 @@ const Portfolio = ({ translations }) => {
           </div>
 
           {/* Statistics Section */}
-          <section className="portfolio-section">
-            <h2>Our Impact in Numbers</h2>
-            <p className="text-center">The AVS Group has grown exponentially since our founding in 2020, making a significant impact across multiple industries.</p>
 
-            <div className="stats-grid">
-              <div className="stat-box">
-                <div className="counter" data-target="7">0</div>
-                <div className="stat-label">Farms</div>
-              </div>
-
-              <div className="stat-box">
-                <div className="counter" data-target="3250">0</div>
-                <div className="stat-label">Animals</div>
-              </div>
-
-              <div className="stat-box">
-                <div className="counter" data-target="5">0</div>
-                <div className="stat-label">Restaurants</div>
-              </div>
-
-              <div className="stat-box">
-                <div className="counter" data-target="150">0</div>
-                <div className="stat-label">Employees</div>
-              </div>
-            </div>
-          </section>
 
           {/* Investment Section */}
           <section className="portfolio-section" id="invest">

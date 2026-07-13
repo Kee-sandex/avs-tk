@@ -147,21 +147,7 @@ const AvsModel = ({ translations }) => {
             </div>
           </div>
 
-          <div className="download-strip">
-            <div className="download-strip-text">
-              <h3 className="panel-title">
-                <FontAwesomeIcon icon={faFileDownload} />
-                {translations['downloadTitle'] || 'Download Brochure'}
-              </h3>
-              <p className="download-description">
-                {translations['downloadDescription'] || 'You can download the full company profile for more details.'}
-              </p>
-            </div>
-            <a href="#" download className="download-btn">
-              {translations['downloadButton'] || 'Download PDF'}
-              <FontAwesomeIcon icon={faFileDownload} />
-            </a>
-          </div>
+        
         </div>
       </section>
 
@@ -173,16 +159,16 @@ const AvsModel = ({ translations }) => {
               <FontAwesomeIcon icon={faChartLine} /> Investment &amp; Returns Model
             </span>
             <h2 className="section-title">
-              {translations['investmentTitle'] || 'Investment & Returns Model'}
+              {translations['investmentTitle'] || 'Cattle Purchase & Leaseback Model'}
             </h2>
             <p className="section-subtitle">
-              {translations['investmentSubtitle'] || 'Discover how you can invest in AVS Dairy and the returns you can expect'}
+              {translations['investmentSubtitle'] || 'Discover how you can invest in AVS Dairy milking cattle and the returns you can expect'}
             </p>
           </div>
 
           <blockquote className="investment-highlight">
             <p className="investment-highlight-text">
-              {translations['joiningParagraph1'] || 'To join AVS Dairy, a one-time membership fee of ₹1,200 is required, which can be used to purchase products or dine at their restaurants. After joining, members receive a unique ID and password.'}
+              {translations['joiningParagraph1'] || 'Investors purchase milking cattle for ₹1,00,000 (payable via UPI). Upon payment, ownership transfers to the investor, who simultaneously leases the cattle back to AVS for 48 months.'}
             </p>
           </blockquote>
 
@@ -193,7 +179,7 @@ const AvsModel = ({ translations }) => {
               {translations['agreementTitle'] || 'The 48-Month Agreement'}
             </h3>
             <p className="agreement-text">
-              {translations['agreementParagraph'] || 'For an investment of ₹1,00,000, the company offers a 48-month agreement, providing a 3% monthly return. This means an investor receives ₹3,000 every month for four years, totaling ₹1,44,000 in returns. At the end of the agreement, the original investment of ₹1,00,000 is also returned.'}
+              {translations['agreementParagraph'] || 'For the ₹1,00,000 cattle purchase, the company offers a 48-month leaseback agreement. The investor receives a cash rental of ₹2,700 plus ₹300 in a product wallet every month, totaling ₹1,44,000 over four years. After 48 months, the investor can either take back the cattle or receive a full refund of the ₹1,00,000 principal.'}
             </p>
 
             <div className="ledger-flow">
@@ -203,7 +189,7 @@ const AvsModel = ({ translations }) => {
               </div>
               <FontAwesomeIcon icon={faLongArrowAltRight} className="flow-arrow" />
               <div className="flow-item">
-                <div className="flow-value">48 * 3000</div>
+                <div className="flow-value">48 * (₹2700 + ₹300)</div>
                 <div className="flow-label">{translations['monthsLabel'] || 'Months'}</div>
               </div>
               <FontAwesomeIcon icon={faLongArrowAltRight} className="flow-arrow" />
@@ -214,11 +200,9 @@ const AvsModel = ({ translations }) => {
             </div>
 
             <div className="total-value-box">
-              <div className="total-value">
-                {translations['totalValue'] || 'Total Value: ₹2,44,000'}
-              </div>
+
               <div className="total-description">
-                {translations['totalDescription'] || '(₹1,00,000 investment + ₹1,44,000 returns)'}
+
               </div>
             </div>
           </div>
@@ -226,31 +210,31 @@ const AvsModel = ({ translations }) => {
           <div className="dossier-panel method-panel">
             <h3 className="panel-title">
               <FontAwesomeIcon icon={faChartLine} />
-              {translations['returnMethodTitle'] || 'How the 3% Return is Generated'}
+              {translations['returnMethodTitle'] || 'How the Returns are Structured'}
             </h3>
             <p className="return-method-text">
-              {translations['returnMethodParagraph1'] || 'The company uses the ₹1,00,000 investment to purchase a buffalo and a calf. The buffalo produces approximately 10 liters of milk daily. The member has two options:'}
+              {translations['returnMethodParagraph1'] || 'The company insures the cattle at its own cost and manages all dairy operations. During the 48-month lease, the member has two return options:'}
             </p>
 
             <div className="option-columns">
               <div className="option-box">
                 <FontAwesomeIcon icon={faWineBottle} className="option-icon" />
-                <h4 className="option-title">{translations['option1'] || 'Receive 1.5 liters of milk daily'}</h4>
+                <h4 className="option-title">{translations['option1'] || 'Receive 1 liter of milk daily'}</h4>
                 <p className="option-description">
-                  {translations['option1Desc'] || 'Fresh milk delivered to your doorstep daily'}
+                  {translations['option1Desc'] || 'Fresh milk delivered as your daily lease return'}
                 </p>
               </div>
               <div className="option-box">
                 <FontAwesomeIcon icon={faRupeeSign} className="option-icon" />
-                <h4 className="option-title">{translations['option2'] || 'Receive ₹3,000 per month'}</h4>
+                <h4 className="option-title">{translations['option2'] || 'Receive ₹2,700 + ₹300 Wallet'}</h4>
                 <p className="option-description">
-                  {translations['option2Desc'] || 'Equivalent to the value of the milk (1.5 liters x 30 days)'}
+                  {translations['option2Desc'] || '₹90/day cash lease (₹2,700/mo) plus ₹300/mo product wallet'}
                 </p>
               </div>
             </div>
 
             <p className="return-method-text">
-              {translations['returnMethodParagraph2'] || 'The remaining 8.5 liters of milk is sold or used in the company\'s restaurants, which is how the company generates its profit.'}
+              {translations['returnMethodParagraph2'] || 'It is expressly agreed that all other income, profits, benefits, milk proceeds, and any new calf or offspring born from the cattle exclusively belong to the company. Note: Premature exit before 24 months incurs a 10% principal deduction.'}
             </p>
           </div>
         </div>
